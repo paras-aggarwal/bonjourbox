@@ -1,0 +1,85 @@
+* { 
+	margin: 0; 
+	padding: 0; 
+	box-sizing: border-box; 
+}
+body { 
+	font: 13px Helvetica, Arial; 
+	background-color: #eee; 
+}
+#nav { 
+	background-color: #4a4f9d; 
+	z-index: 100;
+}
+#about {
+	font-size: 16px;
+	text-align: justify;
+}
+#messages { 
+	list-style-type: none; 
+	margin: 90px 0 85px 0; 
+	padding: 0;
+}            
+#messages li { 
+	padding: 5px 10px; 
+}            
+#messages li:nth-child(odd) { 
+	background: #F8F7F6; 
+}            
+#chat-area { 
+	min-height: 100%; 
+	background-color: #fff; 
+	overflow: auto; 
+	z-index: 0;
+}            
+#type { 
+	bottom: 30; 
+	position: fixed; 
+	margin-left: 10px; 
+	z-index: 100;
+}      
+form { 
+	border: 0; 
+	padding: 3px; 
+	position: fixed; 
+	bottom: 0; 
+	width: 33.3%; 
+	z-index: 100;
+}
+form input { 
+	padding: 10px; 
+	width: 90%; 
+	margin-right: .5%; 
+	box-shadow: 1px 1px 1px 1px #ccc;
+}            
+form button { 
+	width: 9%; 
+	background-color: #4a4f9d; 
+	color: #fff; 
+	border-radius: 50%; 
+	padding: 13px; 
+}
+@media screen and (max-width: 991px){
+	form {
+		position: fixed; 
+		bottom: 0; 
+		width: 100%; 
+	}
+	form button { 
+		width: 9%;
+		height: 9%; 
+		padding: 11px; 
+	}
+}
+@media screen and (min-width: 992px){
+	form {
+		position: fixed; 
+		bottom: 0; 
+		width: 33.3%; 
+	}
+	form button { 
+		width: 9%;
+		height: 9%; 
+		padding: 13px; 
+	}
+}

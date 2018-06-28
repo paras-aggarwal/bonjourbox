@@ -1,0 +1,101 @@
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="theme-color" content="#4a4f9d">
+        <link rel="icon" href="assets/bonjour-favicon.png">
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+
+        <title>Bonjour Box : A chat server by Paras Aggarwal</title>
+
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+    </head>
+    <body onload="name()">
+        <div class="row no-gutters">
+            <div class="col-md-12">
+                <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="nav">
+                    <a class="navbar-brand" href="/"><img src="assets/logo-bonjour_box.png" width="200" class="img-fluid" alt="Bonjour Box: A chat server by Paras Aggarwal"></a>
+          
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+          
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item active">
+                                <button class="btn btn-outline-light m-2 my-sm-0" data-toggle="modal" data-target="#aboutModal"><i class="fas fa-info-circle"></i> &nbsp;About</button>
+                            </li>
+                            <li class="nav-item active">
+                                <button class="btn btn-outline-light m-2 my-sm-0" data-toggle="modal" data-target="#devModal"><i class="fab fa-connectdevelop"></i> &nbsp;Developer</button>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <div class="row no-gutters">
+            <div class="col-lg-4 mx-auto" id="chat-area">
+                <ul id="messages"></ul>
+                <div id="type"></div>
+                <form action="">
+                    <input id="m" autocomplete="off" placeholder="Message" /><button><i class="fas fa-check"></i></button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Modals -->
+
+        <!-- about modal -->
+        <div class="modal fade" id="aboutModal" tabindex="-1" role="dialog" aria-labelledby="aboutModal" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h6 class="modal-title" id="aboutModalLabel"><i class="fas fa-info-circle"></i> &nbsp;About Bonjour Box</h6>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p id="about"><strong>Bonjour Box</strong> is a chat room is to share information via text with a group of other users. Generally speaking, the ability to converse with multiple people in the same conversation differentiates chat rooms from instant messaging programs, which are more typically designed for one-to-one communication. The users in a particular chat room are generally connected via a shared internet or other similar connection, and chat rooms exist catering for a wide range of subjects.</p>
+                        
+                        <p id="about"> This site is currently in Beta version and contains alot of bugs, So if you find any bug then please send it on paras.aggarwal@outlook.com</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dev modal -->
+        <div class="modal fade" id="devModal" tabindex="-1" role="dialog" aria-labelledby="devModal" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h6 class="modal-title" id="devModalLabel"><i class="fas fa-info-circle"></i> &nbsp;About Developer</h6>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        
+                        <p id="about"><strong>Bonjour Box</strong> is a chat room is to share information via text with a group of other users. Generally speaking, the ability to converse with multiple people in the same conversation differentiates chat rooms from instant messaging programs, which are more typically designed for one-to-one communication. The users in a particular chat room are generally connected via a shared internet or other similar connection, and chat rooms exist catering for a wide range of subjects.</p>
+                            
+                        <p id="about"> This site is currently in Beta version and contains alot of bugs, So if you find any bug then please send it on paras.aggarwal@outlook.com</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+        <script src="js/socket.js"></script>
+    </body>
+</html>
